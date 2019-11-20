@@ -1,0 +1,21 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="Text" ResponseEncoding="UTF-8"  Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.ViewSchema" Category="Context" Description="Database" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+                    
+                        <% for (int i = 0; i < SourceTable.NonPrimaryKeyColumns.Count; i++) {
+                        if(SourceTable.NonPrimaryKeyColumns[i].Name==SourceTable.Name +"ID")
+                        {
+                            continue;
+                        }
+                        %>
+                        destObj.<%= SourceTable.NonPrimaryKeyColumns[i].Name %> = srcObj.<%= SourceTable.NonPrimaryKeyColumns[i].Name %> ;
+                    <%}%>
+                    #endregion  
+		

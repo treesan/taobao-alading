@@ -1,0 +1,57 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" ResponseEncoding="UTF-8"  Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Database" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Alading.Entity;
+using Alading.Core.Enum;
+
+namespace Alading.Core.Interface
+{
+    public interface I<%= SourceTable.Name %>
+    {       
+        ReturnType Add<%= SourceTable.Name%>(<%= SourceTable.Name %> <%= SourceTable.Name.ToLower() %>);
+       
+        ReturnType Add<%= SourceTable.Name %>(List<<%= SourceTable.Name %>> <%= SourceTable.Name.ToLower() %>List);
+        
+        ReturnType RemoveAll<%= SourceTable.Name %>();
+       
+        ReturnType Remove<%= SourceTable.Name %>(Func<<%= SourceTable.Name %>, bool> func);
+              
+        ReturnType Remove<%= SourceTable.Name %>(string <%= SourceTable.Name.ToLower() %>Code);
+        
+        ReturnType Remove<%= SourceTable.Name %>(List<string> <%= SourceTable.Name.ToLower() %>CodeList);
+       
+        ReturnType Update<%= SourceTable.Name %>(<%= SourceTable.Name %> <%= SourceTable.Name.ToLower() %>);
+       
+        ReturnType Update<%= SourceTable.Name %>(string <%= SourceTable.Name.ToLower() %>Code,<%= SourceTable.Name %> <%= SourceTable.Name.ToLower() %>);
+       
+        List<<%= SourceTable.Name %>> GetAll<%= SourceTable.Name %>();
+      
+        List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(Func<<%= SourceTable.Name %>, bool> func);
+      
+        List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(List<string> <%= SourceTable.Name.ToLower() %>CodeList);
+       
+        List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(int pageIndex, int pageSize, out int rowCount);
+        
+        List<<%= SourceTable.Name  %>> Get<%= SourceTable.Name  %>(Func<<%= SourceTable.Name  %>, bool> func, int pageIndex, int pageSize, out int rowCount);
+         
+        /*        
+        ReturnType Remove<%= SourceTable.Name %>(int <%= SourceTable.Name.ToLower() %>ID);
+        
+        ReturnType Remove<%= SourceTable.Name %>(List<int> <%= SourceTable.Name.ToLower() %>IDList);
+        
+        ReturnType Update<%= SourceTable.Name %>(int <%= SourceTable.Name.ToLower() %>ID,<%= SourceTable.Name %> <%= SourceTable.Name.ToLower() %>);
+        
+        List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(List<int> <%= SourceTable.Name.ToLower() %>IDList);
+        */
+    }
+}

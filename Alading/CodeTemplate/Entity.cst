@@ -1,0 +1,21 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="Text" ResponseEncoding="UTF-8"  Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Database" %>
+<%@ Property Name="NickName" Type="String" Category="Context" Description="Database" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+
+    <EntitySetMapping Name="<%=SourceTable.Name%>">
+        <EntityTypeMapping TypeName="IsTypeOf(AladingModel.<%=SourceTable.Name%>)">
+            <MappingFragment StoreEntitySet="<%= NickName %>">
+                 <% for (int i = 0; i < SourceTable.Columns.Count; i++){%> 
+                    <ScalarProperty Name="<%= SourceTable.Columns[i].Name %>" ColumnName="<%=NickName%>P<%=i%>" />                    
+                 <%}%>
+            </MappingFragment>
+        </EntityTypeMapping>
+    </EntitySetMapping>

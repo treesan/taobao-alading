@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="52854379-25c0-4121-955b-27e912d23197" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.kuai888.com.cn/svc/expressservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExpressService.xsd" MetadataType="Schema" ID="c129f4a9-e6c8-4451-91ad-32e0fa87c0e9" SourceId="1" SourceUrl="http://www.kuai888.com.cn/svc/ExpressService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExpressService1.xsd" MetadataType="Schema" ID="2f3da0d5-f39f-491d-86cb-9940b289facb" SourceId="1" SourceUrl="http://www.kuai888.com.cn/svc/ExpressService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExpressService.wsdl" MetadataType="Wsdl" ID="6a42548b-08e5-416c-8d31-bb2a3e635b7b" SourceId="1" SourceUrl="http://www.kuai888.com.cn/svc/ExpressService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExpressService.disco" MetadataType="Disco" ID="202b05ee-1acb-49f6-acbe-6f5136b3787a" SourceId="1" SourceUrl="http://www.kuai888.com.cn/svc/ExpressService.svc?disco" />
+    <MetadataFile FileName="ExpressService1.wsdl" MetadataType="Wsdl" ID="0468c36b-445e-4256-9757-dab22192eb0a" SourceId="1" SourceUrl="http://www.kuai888.com.cn/svc/ExpressService.svc?wsdl" />
+    <MetadataFile FileName="ExpressService2.xsd" MetadataType="Schema" ID="7e23075c-08f3-4009-baa4-25bcc36cf96f" SourceId="1" SourceUrl="http://www.kuai888.com.cn/svc/ExpressService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

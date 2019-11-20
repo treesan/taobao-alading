@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="ExpressService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="" location="http://www.kuai888.com.cn/svc/ExpressService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="WebHttpBinding_ExpressService" type="ExpressService">
+    <wsdl:operation name="GetExpressList">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticInfo">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SearchExpressList">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomerExpressList">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExpressTrack">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpressStatus">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpressTrack">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreas">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ResetValidateCode">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyList">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ChangExpressOutId">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemo">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendAndAcceptStat">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetEfficiencyStat">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUseageStat">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalCompanyUseageStat">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelfCompanyUseageStat">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAreaStat">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Exit">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemMessage">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAIKeyword">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSoldTrades">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetTradeInfo">
+      <wsdl:input />
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExpressService">
+    <wsdl:port name="WebHttpBinding_ExpressService" binding="tns:WebHttpBinding_ExpressService" />
+  </wsdl:service>
+</wsdl:definitions>

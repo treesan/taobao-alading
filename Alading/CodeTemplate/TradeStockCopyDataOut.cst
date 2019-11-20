@@ -1,0 +1,54 @@
+﻿<%@ CodeTemplate Language="C#" ResponseEncoding="UTF-8" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceDatabase" Type="SchemaExplorer.DatabaseSchema" SourceDataBase="MixJob" Category="Context" Description="Database that the stored procedures should be based on." %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %> 
+
+<% 
+ foreach (ViewSchema table in SourceDatabase.Views) 
+ { 
+    OutputSubTemplate(table); 
+ } 
+%>
+<script runat="template"> 
+
+private CodeTemplate _mySubTemplate;
+[Browsable(false)]
+public CodeTemplate MySubTemplate 
+{
+   get 
+   { 
+      if (_mySubTemplate == null) 
+      { 
+         //CodeTemplateCompiler compiler = new CodeTemplateCompiler(this.CodeTemplateInfo.DirectoryName + "\\MixJobToAlading\\DataProviderUpdate.cst"); 
+         CodeTemplateCompiler compiler = new CodeTemplateCompiler(this.CodeTemplateInfo.DirectoryName +"\\TradeStockCopyData.cst"); 
+          
+        compiler.Compile(); 
+         if (compiler.Errors.Count == 0) 
+         { 
+            _mySubTemplate = compiler.CreateInstance(); 
+         } 
+         else 
+         { 
+            for (int i = 0; i < compiler.Errors.Count; i++) 
+            {
+               Response.WriteLine(compiler.Errors[i].ToString()); 
+            } 
+         } 
+      } 
+      return _mySubTemplate; 
+   }
+}
+public void OutputSubTemplate(ViewSchema table) 
+{ 
+   MySubTemplate.SetProperty("SourceTable", table); 
+   MySubTemplate.Render(Response);
+   MySubTemplate.RenderToFile(@"C:\AladingV2\" + table.Name+"Provider.cs", true);
+}
+
+</script>
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TradeList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IsSelected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CustomTid" type="xs:string" minOccurs="0" />
+              <xs:element name="IsLocked" type="xs:boolean" minOccurs="0" />
+              <xs:element name="type" msdata:Caption="交易类别" type="xs:string" minOccurs="0" />
+              <xs:element name="buyer_email" msdata:Caption="收货人邮箱" type="xs:string" minOccurs="0" />
+              <xs:element name="seller_nick" msdata:Caption="卖家昵称" type="xs:string" minOccurs="0" />
+              <xs:element name="buyer_nick" msdata:Caption="买家昵称" type="xs:string" minOccurs="0" />
+              <xs:element name="created" msdata:Caption="创建时间" type="xs:string" minOccurs="0" />
+              <xs:element name="tradeTotalFee" msdata:Caption="商品金额" type="xs:string" minOccurs="0" />
+              <xs:element name="TradePayment" msdata:Caption="应付金额" type="xs:string" minOccurs="0" />
+              <xs:element name="post_fee" msdata:Caption="邮费" type="xs:string" minOccurs="0" />
+              <xs:element name="LockedUserName" msdata:Caption="锁定备注" type="xs:string" minOccurs="0" />
+              <xs:element name="LockedTime" msdata:Caption="锁定时间" type="xs:string" minOccurs="0" />
+              <xs:element name="HasInvoice" msdata:Caption="是否开票" type="xs:string" minOccurs="0" />
+              <xs:element name="AlipayNo" msdata:Caption="买家支付宝账号" type="xs:string" minOccurs="0" />
+              <xs:element name="tid" msdata:Caption="交易id" type="xs:string" minOccurs="0" />
+              <xs:element name="TradeIsLockProduct" msdata:Caption="是否缺货" type="xs:string" minOccurs="0" />
+              <xs:element name="TradeTimeStamp" msdata:Caption="交易时间戳" type="xs:string" minOccurs="0" />
+              <xs:element name="receiver_state" msdata:Caption="所在省" type="xs:string" minOccurs="0" />
+              <xs:element name="receiver_city" msdata:Caption="所在市" type="xs:string" minOccurs="0" />
+              <xs:element name="receiver_name" msdata:Caption="收货人" type="xs:string" minOccurs="0" />
+              <xs:element name="receiver_zip" msdata:Caption="邮编" type="xs:string" minOccurs="0" />
+              <xs:element name="receiver_district" msdata:Caption="收货人地区" type="xs:string" minOccurs="0" />
+              <xs:element name="receiver_address" msdata:Caption="收货人地址" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrderList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tid" msdata:Caption="交易编号" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomTid" type="xs:string" minOccurs="0" />
+              <xs:element name="iid" msdata:Caption="商品编号" type="xs:string" minOccurs="0" />
+              <xs:element name="OuterID" msdata:Caption="商品外部编码" type="xs:string" minOccurs="0" />
+              <xs:element name="TradeOrderCode" msdata:Caption="TradeOrderCode" type="xs:string" minOccurs="0" />
+              <xs:element name="oid" msdata:Caption="订单号" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msdata:Caption="商品名" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemType" msdata:Caption="宝贝类别" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderType" msdata:Caption="商品性质" type="xs:string" minOccurs="0" />
+              <xs:element name="sku_properties_name" msdata:Caption="商品属性" type="xs:string" minOccurs="0" />
+              <xs:element name="LeftQuantity" msdata:Caption="库存剩余量" type="xs:string" minOccurs="0" />
+              <xs:element name="num" msdata:Caption="购买数" type="xs:string" minOccurs="0" />
+              <xs:element name="price" msdata:Caption="商品价格" type="xs:string" minOccurs="0" />
+              <xs:element name="orderTotalFee" msdata:Caption="商品金额" type="xs:string" minOccurs="0" />
+              <xs:element name="adjust_fee" msdata:Caption="调整费" type="xs:string" minOccurs="0" />
+              <xs:element name="payment" msdata:Caption="应付金额" type="xs:string" minOccurs="0" />
+              <xs:element name="lackProductOrNot" msdata:Caption="缺货与否" type="xs:string" minOccurs="0" />
+              <xs:element name="orderDetail" msdata:Caption="修改订单" type="xs:string" minOccurs="0" />
+              <xs:element name="StockTimeStamp" msdata:Caption="库存时间戳" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//TradeList" />
+      <xs:field xpath="CustomTid" />
+    </xs:unique>
+    <xs:keyref name="订单详细信息" refer="Constraint1">
+      <xs:selector xpath=".//OrderList" />
+      <xs:field xpath="CustomTid" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

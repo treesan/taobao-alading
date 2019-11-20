@@ -1,0 +1,67 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="Text" ResponseEncoding="UTF-8"  Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.ViewSchema" Category="Context" Description="Database" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Alading.DataProvider;
+using Alading.Core.Enum;
+using Alading.Entity;
+
+namespace Alading.Business
+{
+    public static class <%= SourceTable.Name %>Service
+    {         
+        public static List<<%= SourceTable.Name %>> GetAll<%= SourceTable.Name %>()
+        {
+            return DataProviderClass.Instance().GetAll<%= SourceTable.Name %>();
+        }
+    
+        public static List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(Func<<%= SourceTable.Name %>, bool> func)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(func);
+        }
+    
+        public static <%= SourceTable.Name %> Get<%= SourceTable.Name %>(string <%= SourceTable.Name.ToLower()%>Code)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(<%= SourceTable.Name.ToLower()%>Code);
+        }
+        
+        /*
+        public static <%= SourceTable.Name %> Get<%= SourceTable.Name %>(int <%= SourceTable.Name.ToLower()%>ID)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(<%= SourceTable.Name.ToLower()%>ID);
+        }
+        */
+    
+        public static List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(List<string> <%= SourceTable.Name.ToLower()%>CodeList)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(<%= SourceTable.Name.ToLower()%>CodeList);
+        }
+        
+        /*
+        public static List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(List<int> <%= SourceTable.Name.ToLower()%>IDList)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(<%= SourceTable.Name.ToLower()%>IDList);
+        }
+        */
+    
+        public static List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(int pageIndex, int pageSize, out int rowCount)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(pageIndex, pageSize, out rowCount);
+        }
+        
+        public static List<<%= SourceTable.Name %>> Get<%= SourceTable.Name %>(Func<<%= SourceTable.Name %>, bool> func, int pageIndex, int pageSize, out int rowCount)
+        {
+            return DataProviderClass.Instance().Get<%= SourceTable.Name %>(func, pageIndex, pageSize, out rowCount);
+        }
+    }
+}

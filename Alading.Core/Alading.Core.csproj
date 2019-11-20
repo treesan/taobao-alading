@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39822A8C-6259-434A-920C-AFEF9AD4DBC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alading.Core</RootNamespace>
+    <AssemblyName>Alading.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Alading\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Code128\Code128Content.cs" />
+    <Compile Include="Code128\Code128Rendering.cs" />
+    <Compile Include="Enum\Enum.cs" />
+    <Compile Include="Enum\TradeEnum.cs" />
+    <Compile Include="Helper\ConfigHelper.cs" />
+    <Compile Include="Helper\IniFilesHelper.cs" />
+    <Compile Include="Helper\SecurityHelper.cs" />
+    <Compile Include="IAlading.cs" />
+    <Compile Include="Interface\IArea.cs" />
+    <Compile Include="Interface\IBrand.cs" />
+    <Compile Include="Interface\ICode.cs" />
+    <Compile Include="Interface\IConsumer.cs" />
+    <Compile Include="Interface\IItem.cs" />
+    <Compile Include="Interface\IItemAssemble.cs" />
+    <Compile Include="Interface\IItemCat.cs" />
+    <Compile Include="Interface\IItemProp.cs" />
+    <Compile Include="Interface\IItemPropValue.cs" />
+    <Compile Include="Interface\IItemSellerAuthorize.cs" />
+    <Compile Include="Interface\IJournalAccount.cs" />
+    <Compile Include="Interface\ILogisticCompany.cs" />
+    <Compile Include="Interface\ILogisticCompanyTemplate.cs" />
+    <Compile Include="Interface\ILogisticCompanyTemplateItem.cs" />
+    <Compile Include="Interface\IUserSalary.cs" />
+    <Compile Include="Interface\IView_OrderItemStockProduct.cs" />
+    <Compile Include="Interface\IPayCharge.cs" />
+    <Compile Include="Interface\IPermission.cs" />
+    <Compile Include="Interface\IPicture.cs" />
+    <Compile Include="Interface\IPostage.cs" />
+    <Compile Include="Interface\IPostageMode.cs" />
+    <Compile Include="Interface\IProduct.cs" />
+    <Compile Include="Interface\IPurchaseOrder.cs" />
+    <Compile Include="Interface\IPurchaseProduct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IRateContent.cs" />
+    <Compile Include="Interface\IRole.cs" />
+    <Compile Include="Interface\IRolePermission.cs" />
+    <Compile Include="Interface\ISellerCat.cs" />
+    <Compile Include="Interface\IShipping.cs" />
+    <Compile Include="Interface\IShop.cs" />
+    <Compile Include="Interface\IStockCat.cs" />
+    <Compile Include="Interface\IStockDetail.cs" />
+    <Compile Include="Interface\IStockHouse.cs" />
+    <Compile Include="Interface\IStockInOut.cs" />
+    <Compile Include="Interface\IStockItem.cs" />
+    <Compile Include="Interface\IStockLayout.cs" />
+    <Compile Include="Interface\IStockPrice.cs" />
+    <Compile Include="Interface\IStockProduct.cs" />
+    <Compile Include="Interface\IStockProp.cs" />
+    <Compile Include="Interface\IStockPropValue.cs" />
+    <Compile Include="Interface\IStockUnit.cs" />
+    <Compile Include="Interface\IStockUnitGroup.cs" />
+    <Compile Include="Interface\ISupplier.cs" />
+    <Compile Include="Interface\ITrade.cs" />
+    <Compile Include="Interface\ITradeInfo.cs" />
+    <Compile Include="Interface\ITradeOrder.cs" />
+    <Compile Include="Interface\ITradeRate.cs" />
+    <Compile Include="Interface\ITradeRefund.cs" />
+    <Compile Include="Interface\ITradeRefundMessage.cs" />
+    <Compile Include="Interface\IUser.cs" />
+    <Compile Include="Interface\IUserRole.cs" />
+    <Compile Include="Interface\IUserShop.cs" />
+    <Compile Include="Interface\IUserStockHouse.cs" />
+    <Compile Include="Interface\IView_ItemPropValue.cs" />
+    <Compile Include="Interface\IView_ItemStock.cs" />
+    <Compile Include="Interface\IView_StockDetail.cs" />
+    <Compile Include="Interface\IView_StockItemProduct.cs" />
+    <Compile Include="Interface\IView_TradeAssembleStock.cs" />
+    <Compile Include="Interface\IView_TradeShop.cs" />
+    <Compile Include="Interface\IView_TradeStock.cs" />
+    <Compile Include="Interface\IView_ShopItem.cs" />
+    <Compile Include="Interface\IConsumerVisit.cs" />
+    <Compile Include="Interface\IConsumerAddress.cs" />
+    <Compile Include="Interface\IEmailTemplate.cs" />
+    <Compile Include="Interface\ITask.cs" />
+    <Compile Include="Interface\IEmailTemplateCat.cs" />
+    <Compile Include="Interface\IView_UserRole.cs" />
+    <Compile Include="Interface\IConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alading.Entity\Alading.Entity.csproj">
+      <Project>{67C3A7A5-8F51-4B1B-B30E-578A73C02D85}</Project>
+      <Name>Alading.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alading.Taobao\Alading.Taobao.csproj">
+      <Project>{534B0BBA-26AB-48A5-8FD5-009066599305}</Project>
+      <Name>Alading.Taobao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\AForge.Genetic.dll" />
+    <Content Include="Libs\AForge.Imaging.dll" />
+    <Content Include="Libs\AForge.Imaging.Formats.dll" />
+    <Content Include="Libs\AForge.Math.dll" />
+    <Content Include="Libs\Aspose.Cells.dll" />
+    <Content Include="Libs\DevExpress.Localization.v9.3.dll" />
+    <Content Include="Libs\DotNetOpenMail.dll" />
+    <Content Include="Libs\log4net.dll" />
+    <Content Include="Libs\log4net.xml" />
+    <Content Include="Libs\Microsoft.mshtml.dll" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Caching.dll" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Common.xml" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.xml" />
+    <Content Include="Libs\Microsoft.Practices.ObjectBuilder2.dll" />
+    <Content Include="Libs\Microsoft.Practices.Unity.dll" />
+    <Content Include="Libs\msadox.dll" />
+    <Content Include="Libs\msjro.dll" />
+    <Content Include="Libs\MySql.Data.dll" />
+    <Content Include="Libs\MySql.Data.Entity.dll" />
+    <Content Include="Libs\Newtonsoft.Json.dll" />
+    <Content Include="Libs\SgmlReaderDll.dll" />
+    <Content Include="Libs\SQLDMO.DLL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

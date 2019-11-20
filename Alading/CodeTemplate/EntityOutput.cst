@@ -1,0 +1,143 @@
+﻿<%@ CodeTemplate Language="C#" ResponseEncoding="UTF-8" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceDatabase" Type="SchemaExplorer.DatabaseSchema" SourceDataBase="MixJob" Category="Context" Description="Database that the stored procedures should be based on." %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %> 
+
+<% 
+System.Collections.Hashtable table = new System.Collections.Hashtable();
+table.Add("SellerCat", "A1");
+table.Add("RolePermission", "A2");
+table.Add("Role", "A3");
+table.Add("Receiver", "A4");
+table.Add("RateContent", "A5");
+table.Add("PurchaseProduct", "A6");
+table.Add("PurchaseOrder", "A7");
+table.Add("ProductCat", "A8");
+table.Add("ProductAssemble", "A9");
+table.Add("Product", "A10");
+table.Add("PostageMode", "A11");
+table.Add("Postage", "A12");
+table.Add("Picture", "A13");
+table.Add("Permission", "A14");
+table.Add("PayCharge", "A15");
+table.Add("LogisticCompanyTemplateItem", "A16");
+table.Add("LogisticCompanyTemplate", "A17");
+table.Add("LogisticCompany", "A18");
+table.Add("JournalAccount", "A19");
+table.Add("ItemSellerAuthorize", "A20");
+table.Add("ItemPropValue", "A21");
+table.Add("ItemProp", "A22");
+table.Add("ItemCat", "A23");
+table.Add("Item", "A24");
+table.Add("HistoryStockDetail", "A25");
+table.Add("FenxiaoSku", "A26");
+table.Add("FenxiaoProduct", "A27");
+table.Add("EmailTemplateCat", "A28");
+table.Add("EmailTemplate", "A29");
+table.Add("ConsumerVisit", "A30");
+table.Add("ConsumerAddress", "A31");
+table.Add("Consumer", "A32");
+table.Add("Config", "A33");
+table.Add("Code", "A34");
+table.Add("Brand", "A35");
+table.Add("AssembleItem", "A36");
+table.Add("AssembleDetail", "A37");
+table.Add("Area", "A38");
+table.Add("UserStockHouse", "A39");
+table.Add("UserShop", "A40");
+table.Add("UserSalary", "A41");
+table.Add("UserRole", "A42");
+table.Add("User", "A43");
+table.Add("TradeRefundMessage", "A44");
+table.Add("TradeRefund", "A45");
+table.Add("TradeRate", "A46");
+table.Add("TradeOrder", "A47");
+table.Add("TradeInfo", "A48");
+table.Add("Trade", "A49");
+table.Add("TbUser", "A50");
+table.Add("Tax", "A51");
+table.Add("Task", "A52");
+table.Add("Supplier", "A53");
+table.Add("SubPurchaseOrder", "A54");
+table.Add("StockUnitGroup", "A55");
+table.Add("StockUnit", "A56");
+table.Add("StockPropValue", "A57");
+table.Add("StockProp", "A58");
+table.Add("StockProduct", "A59");
+table.Add("StockPrice", "A60");
+table.Add("StockLayout", "A61");
+table.Add("StockItem", "A62");
+table.Add("StockInOut", "A63");
+table.Add("StockHouseProduct", "A64");
+table.Add("StockHouse", "A65");
+table.Add("StockDetail", "A66");
+table.Add("StockCheckDetail", "A67");
+table.Add("StockCheck", "A68");
+table.Add("StockCat", "A69");
+table.Add("Shop", "A70");
+table.Add("Shipping", "A71");
+ foreach (TableSchema tableSchema in SourceDatabase.Tables) 
+ { 
+    %>
+    <EntitySetMapping Name="<%=tableSchema.Name%>">
+        <EntityTypeMapping TypeName="IsTypeOf(AladingModel.<%=tableSchema.Name%>)">
+            <MappingFragment StoreEntitySet="<%= table[tableSchema.Name].ToString() %>">
+                 <% for (int i = 0; i < tableSchema.Columns.Count; i++){%> 
+                    <ScalarProperty Name="<%= tableSchema.Columns[i].Name %>" ColumnName="<%=table[tableSchema.Name].ToString()%>P<%=i%>" />                    
+                 <%}%>
+            </MappingFragment>
+        </EntityTypeMapping>
+    </EntitySetMapping>
+    <%}%>
+    
+<% 
+ foreach (ViewSchema view in SourceDatabase.Views) 
+ { 
+    Response.WriteLine(view.Name); 
+    //OutputSubTemplate(table); 
+ }
+%>
+<script runat="template"> 
+
+private CodeTemplate _mySubTemplate;
+[Browsable(false)]
+public CodeTemplate MySubTemplate 
+{
+   get 
+   { 
+      if (_mySubTemplate == null) 
+      { 
+         //CodeTemplateCompiler compiler = new CodeTemplateCompiler(this.CodeTemplateInfo.DirectoryName + "\\MixJobToAlading\\DataProviderUpdate.cst"); 
+         CodeTemplateCompiler compiler = new CodeTemplateCompiler(this.CodeTemplateInfo.DirectoryName +"\\Interface.cst"); 
+          
+        compiler.Compile(); 
+         if (compiler.Errors.Count == 0) 
+         { 
+            _mySubTemplate = compiler.CreateInstance(); 
+         } 
+         else 
+         { 
+            for (int i = 0; i < compiler.Errors.Count; i++) 
+            {
+               Response.WriteLine(compiler.Errors[i].ToString()); 
+            } 
+         } 
+      } 
+      return _mySubTemplate; 
+   }
+}
+public void OutputSubTemplate(TableSchema table) 
+{ 
+   MySubTemplate.SetProperty("SourceTable", table); 
+   MySubTemplate.Render(Response);
+   MySubTemplate.RenderToFile(@"C:\AladingV2\Interface\I" + table.Name+".cs", true);
+}
+
+</script>
+

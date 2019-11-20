@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NewSite.master.cs" Inherits="Alading.Web.NewSite" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>阿拉丁2.0 官方主页</title>
+    <link href="Content/style.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="top">
+        <div class="wrapper">
+            <div id="logo"><a href="Default.aspx"></a></div>
+            <div id="top_extra">
+                <% if (Session["UserCode"] == null || Session["UserName"] == null)
+                   { %>
+                <asp:HyperLink ID="btn_register" runat="server" CssClass="register" NavigateUrl="Register.aspx"></asp:HyperLink>
+                <asp:LinkButton ID="btn_login" runat="server" CssClass="login" onclick="btn_login_Click"></asp:LinkButton>
+                <asp:TextBox ID="top_password" runat="server" CssClass="top_password_input" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="top_account" runat="server" CssClass="top_account_input"></asp:TextBox>
+                <% }
+                   else
+                   { %>
+                <span class="welcome">欢迎您，尊敬的客户 <strong><%= Session["UserName"] %></strong>！</span>
+                <asp:HyperLink ID="btn_user_info" runat="server" NavigateUrl="UserInfo.aspx" CssClass="logout">用户中心</asp:HyperLink>
+                <asp:LinkButton ID="btn_logout" runat="server" onclick="btn_logout_Click" CssClass="logout">安全退出</asp:LinkButton>
+                <% } %>
+            </div>
+            <div class="clear"></div>
+        </div>        
+    </div>
+    
+    <div id="nav">
+        <div class="wrapper">
+            <div id="search">
+                <a href="#">Search</a>
+                <input id="search_keyword" name="search_keyword" class="textbox" type="text" />                
+            </div>
+            <ul>
+                <li id="nav_home"><a href="Default.aspx">官方首页</a></li>
+                <li id="nav_product"><a href="Product.aspx">产品介绍</a></li>
+                <li id="nav_solution"><a href="#">解决方案</a></li>
+                <li id="nav_help"><a href="HelpList.aspx">在线帮助</a></li>
+                <li id="nav_cooperation"><a href="#">商业合作</a></li>
+                <li id="nav_about"><a href="#">关于阿拉丁</a></li>
+            </ul>            
+        </div>
+    </div>   
+    
+    <div id="content_wrapper">
+        <div id="header">
+            <asp:ContentPlaceHolder ID="HeaderContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="PageContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="partner">
+            <h3><span class="wrapper">合作伙伴<span class="st">Our Cooperative Partner</span></span></h3>
+            <div id="partner_content">
+                <div class="wrapper">
+                    <ul>
+                        <li><a href="http://www.taobao.com">
+                            <img src="Content/images/taobao_logo.jpg" />
+                            <span>淘宝网</span></a></li>
+                        <li><a href="http://www.microsoft.com">
+                            <img src="Content/images/microsoft_logo.jpg" />
+                            <span>微软</span></a></li>
+                        <li><a href="http://china.alibaba.com.cn">
+                            <img src="Content/images/alibaba_logo.jpg" />
+                            <span>阿里巴巴</span></a></li>    
+                        <li><a href="http://www.ibm.com">
+                            <img src="Content/images/ibm_logo.jpg" />
+                            <span>IBM</span></a></li>    
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <div class="wrapper">
+                <div>
+                    <a href="#" class="goto_top">&nbsp;&nbsp;&nbsp;</a>
+                    <a href="Default.aspx" class="goto_home" >&nbsp;&nbsp;&nbsp;</a> 
+                    Copyright &copy; 2010 Aladding CO.LTD All Rights Reserved.
+                    渝ICP备：6454968
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="wrapper">
+                <div id="fast_login">
+                    <h3>FAST LOGIN<span>快速通道</span></h3>
+                    <a class="login2" href="Login.aspx"></a>
+                    <input type="text" id="bottom_account" name="bottom_account" class="account_input" />
+                    <input type="password" id="bottom_password" name="bottom_password" class="password_input" />
+                </div>
+                <div id="logo3"></div>
+                <div id="contact">
+                    <h3>CONTACT US<span>联系阿拉丁</span></h3>
+                    <p>
+                        <span>地址：</span>
+                        <span>邮编：</span>
+                        <span>E-Mail：</span>
+                    </p>
+                    <p>
+                        <span>电话：</span>
+                        <span>传真：</span>
+                        <span></span>
+                    </p>
+                    <p>
+                        <span>
+                            华东大区：
+                            <a href="javascript:;"><img src="Content/images/talk_qq.png" /></a>
+                        </span>
+                        <span>
+                            华北大区：
+                            <a href="javascript:;"><img src="Content/images/talk_qq.png" /></a>
+                        </span>
+                    </p>               
+                    <p>
+                        <span>
+                            华西大区：
+                            <a href="javascript:;"><img src="Content/images/talk_qq.png" /></a>
+                        </span>
+                        <span>
+                            华南大区：
+                            <a href="javascript:;"><img src="Content/images/talk_qq.png" /></a>
+                        </span>
+                    </p>
+                </div>                                   
+                <div class="clear"></div>
+            </div>        
+        </div>
+    </div>
+    <div id="nav_shadow"></div>
+    </form>
+</body>
+</html>

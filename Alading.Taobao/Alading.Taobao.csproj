@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{534B0BBA-26AB-48A5-8FD5-009066599305}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alading.Taobao</RootNamespace>
+    <AssemblyName>Alading.Taobao</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Base\TopService.cs" />
+    <Compile Include="API\Common\EncryptUtil.cs" />
+    <Compile Include="API\Common\TopJsonRestClient.cs" />
+    <Compile Include="API\Common\TopUtils.cs" />
+    <Compile Include="API\Top_ItemCatService.cs" />
+    <Compile Include="API\Top_ItemService.cs" />
+    <Compile Include="API\Top_ProductService.cs" />
+    <Compile Include="API\Top_ShippingService.cs" />
+    <Compile Include="API\Top_ShopService.cs" />
+    <Compile Include="API\Top_TradeRateService.cs" />
+    <Compile Include="API\Top_TradeService.cs" />
+    <Compile Include="API\Top_UserService.cs" />
+    <Compile Include="API\Top_AppstoreService.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entity\Area.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\AuthorizeCats.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\BaseObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Brand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ConfirmFee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Extend\BaseObject.cs" />
+    <Compile Include="Entity\Extend\ItemCatReq.cs" />
+    <Compile Include="Entity\Extend\ItemCatRsp.cs" />
+    <Compile Include="Entity\Extend\ItemReq.cs" />
+    <Compile Include="Entity\Extend\ItemRsp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Extend\ProductReq.cs" />
+    <Compile Include="Entity\Extend\ProductRsp.cs" />
+    <Compile Include="Entity\Extend\ShippingReq.cs" />
+    <Compile Include="Entity\Extend\ShippingRsp.cs" />
+    <Compile Include="Entity\Extend\ShopRsp.cs" />
+    <Compile Include="Entity\Extend\TradeRateReq.cs" />
+    <Compile Include="Entity\Extend\TradeRateRsp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Extend\TradeReq.cs" />
+    <Compile Include="Entity\Extend\TradeRsp.cs" />
+    <Compile Include="Entity\Extend\UserRsp.cs" />
+    <Compile Include="Entity\Item.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ItemCat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ItemImg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ItemProp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ItemSearch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Location.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\LogisticsCompany.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\LogisticsOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Order.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Postage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\PostageMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Product.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProductImg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProductPropImg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\PropImg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\PropValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Refund.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\RefundMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\RefundTimeout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ResponseList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\SellerCat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Shipping.cs" />
+    <Compile Include="Entity\Shop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ShopCat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Sku.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Tadget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\TaobaokeItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\TaobaokeReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\TaobaokeReportMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\TaobaokeShop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\Trade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\TradeConfirmFee.cs" />
+    <Compile Include="Entity\TradeRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\UserCredit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\UserSubscribe.cs" />
+    <Compile Include="Entity\Video.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionHelper.cs" />
+    <Compile Include="TopDictionary.cs" />
+    <Compile Include="TopError.cs" />
+    <Compile Include="TopException.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D221737A-8929-4FB0-AECA-8666531F9F78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alading.Business</RootNamespace>
+    <AssemblyName>Alading.Business</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaService.cs" />
+    <Compile Include="BrandService.cs" />
+    <Compile Include="CodeService.cs" />
+    <Compile Include="ConsumerService.cs" />
+    <Compile Include="ItemCatService.cs" />
+    <Compile Include="ItemPropService.cs" />
+    <Compile Include="ItemPropValueService.cs" />
+    <Compile Include="ItemSellerAuthorizeService.cs" />
+    <Compile Include="ItemService.cs" />
+    <Compile Include="JournalAccountService.cs" />
+    <Compile Include="LogisticCompanyService.cs" />
+    <Compile Include="LogisticCompanyTemplateItemservices.cs" />
+    <Compile Include="PayChargeService.cs" />
+    <Compile Include="PermissionService.cs" />
+    <Compile Include="PictureService.cs" />
+    <Compile Include="PostageModeService.cs" />
+    <Compile Include="PostageService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrderService.cs" />
+    <Compile Include="PurchaseProductService.cs" />
+    <Compile Include="RateContentService.cs" />
+    <Compile Include="RolePermissionService.cs" />
+    <Compile Include="RoleService.cs" />
+    <Compile Include="SellerCatService.cs" />
+    <Compile Include="ShippingService.cs" />
+    <Compile Include="ShopService.cs" />
+    <Compile Include="StockCatService.cs" />
+    <Compile Include="StockDetailService.cs" />
+    <Compile Include="StockHouseService.cs" />
+    <Compile Include="StockInOutService.cs" />
+    <Compile Include="StockItemService.cs" />
+    <Compile Include="StockLayoutService.cs" />
+    <Compile Include="StockPriceService.cs" />
+    <Compile Include="StockProductService.cs" />
+    <Compile Include="StockPropService.cs" />
+    <Compile Include="StockPropValueService.cs" />
+    <Compile Include="StockUnitGroupService.cs" />
+    <Compile Include="StockUnitService.cs" />
+    <Compile Include="SupplierService.cs" />
+    <Compile Include="TradeInfoService.cs" />
+    <Compile Include="TradeOrderService.cs" />
+    <Compile Include="TradeRateService.cs" />
+    <Compile Include="TradeRefundMessageService.cs" />
+    <Compile Include="TradeRefundService.cs" />
+    <Compile Include="TradeService.cs" />
+    <Compile Include="UserRoleService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="View_ItemStockService.cs" />
+    <Compile Include="View_OrderItemService.cs" />
+    <Compile Include="View_StockDetailService.cs" />
+    <Compile Include="View_StockItemProductService.cs" />
+    <Compile Include="View_TradeStockService.cs" />
+    <Compile Include="View_ShopItemService.cs" />
+    <Compile Include="UserShopService.cs" />
+    <Compile Include="UserStockHouseService.cs" />
+    <Compile Include="ConsumerVisitService.cs" />
+    <Compile Include="ConsumerAddressService.cs" />
+    <Compile Include="EmailTemplateService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alading.Core\Alading.Core.csproj">
+      <Project>{39822A8C-6259-434A-920C-AFEF9AD4DBC0}</Project>
+      <Name>Alading.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alading.DataProvider\Alading.DataProvider.csproj">
+      <Project>{149BC8A5-A9B4-4EFF-912B-250B154EB577}</Project>
+      <Name>Alading.DataProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alading.Entity\Alading.Entity.csproj">
+      <Project>{67C3A7A5-8F51-4B1B-B30E-578A73C02D85}</Project>
+      <Name>Alading.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alading.Taobao\Alading.Taobao.csproj">
+      <Project>{534B0BBA-26AB-48A5-8FD5-009066599305}</Project>
+      <Name>Alading.Taobao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssembleItemService.cs" />
+    <Compile Include="LogisticCompanyTemplateService.cs" />
+    <Compile Include="TaskService.cs" />
+    <Compile Include="EmailTemplateCatService.cs" />
+    <Compile Include="UserSalaryService.cs" />
+    <Compile Include="View_OrderItemStockProductService.cs" />
+    <Compile Include="View_TradeAssembleStockService.cs" />
+    <Compile Include="View_TradeShopService.cs" />
+    <Compile Include="View_UserRoleService.cs" />
+    <Compile Include="ConfigService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

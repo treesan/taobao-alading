@@ -1,0 +1,396 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="Text" ResponseEncoding="UTF-8"  Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Database" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %> 
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.CustomProperties" %> 
+
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Alading.Core.Interface;
+using Alading.Entity;
+using System.Data.Linq;
+using System.Data.SqlClient;
+using System.Data.Objects;
+using Alading.Core.Enum;
+using System.Linq.Expressions;
+
+namespace Alading.DataProvider
+{
+   
+    public partial class DataProviderClass : IAlading
+    {        
+     
+        public ReturnType Add<%= SourceTable.Name %>(<%= SourceTable.Name %> <%= SourceTable.Name.ToLower() %>)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+
+                    alading.AddTo<%= SourceTable.Name  %>(<%= SourceTable.Name.ToLower() %>);
+                    if (alading.SaveChanges() == 1)
+                    {
+                        return ReturnType.Success;
+                    }
+                    else
+                    {
+                        return ReturnType.PropertyExisted;
+                    }
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+
+        }
+                
+        public ReturnType Add<%= SourceTable.Name  %>(List<<%= SourceTable.Name  %>> <%= SourceTable.Name.ToLower()%>List)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    foreach (<%= SourceTable.Name  %> <%= SourceTable.Name.ToLower() %> in <%= SourceTable.Name.ToLower() %>List)
+                    {
+                        alading.AddTo<%= SourceTable.Name  %>(<%= SourceTable.Name.ToLower() %>);
+                    }
+                    alading.SaveChanges();
+                    return ReturnType.Success;
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+
+        }
+       
+        public ReturnType RemoveAll<%= SourceTable.Name %>()
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.ToList();
+                    foreach (<%= SourceTable.Name  %> <%= SourceTable.Name.ToLower() %> in list)
+                    {
+                        alading.DeleteObject(<%= SourceTable.Name.ToLower() %>);
+                    }
+                    alading.SaveChanges();
+                    return ReturnType.Success;
+
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (System.Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+        }
+       
+        public ReturnType Remove<%= SourceTable.Name  %>(Func<<%= SourceTable.Name  %>, bool> func)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(func).ToList();
+                    foreach (<%= SourceTable.Name  %> <%= SourceTable.Name.ToLower() %> in list)
+                    {
+                        alading.DeleteObject(<%= SourceTable.Name.ToLower() %>);
+                    }
+                    alading.SaveChanges();
+                    return ReturnType.Success;
+                }
+
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (System.Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+        }
+
+        public List<<%= SourceTable.Name  %>> Get<%= SourceTable.Name  %>(List<string> <%= SourceTable.Name.ToLower() %>CodeList)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+					/*var result = alading.<%= SourceTable.Name  %>.Where(BuildWhereInExpression<<%= SourceTable.Name  %>, int>(v => v.<%= SourceTable.Name  %>ID, <%= SourceTable.Name.ToLower() %>IDList));*/
+                    var result = alading.<%= SourceTable.Name  %>.Where(BuildWhereInExpression<<%= SourceTable.Name  %>, string>(v => v.<%= SourceTable.Name  %>Code, <%= SourceTable.Name.ToLower() %>CodeList));
+
+                    return result.ToList();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public ReturnType Remove<%= SourceTable.Name  %>(List<string> <%= SourceTable.Name.ToLower() %>CodeList)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    /*var result = alading.<%= SourceTable.Name  %>.Where(BuildWhereInExpression<<%= SourceTable.Name  %>, int>(v => v.<%= SourceTable.Name  %>ID, <%= SourceTable.Name.ToLower() %>IDList));*/
+                    var result = alading.<%= SourceTable.Name  %>.Where(BuildWhereInExpression<<%= SourceTable.Name  %>, string>(v => v.<%= SourceTable.Name  %>Code, <%= SourceTable.Name.ToLower() %>CodeList));
+                    foreach (<%= SourceTable.Name  %> s in result)
+                    {
+                        alading.DeleteObject(s);
+                    }
+                    alading.SaveChanges();
+                    return ReturnType.Success;
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (System.Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+        }
+
+    
+        public ReturnType Remove<%= SourceTable.Name  %>(string <%= SourceTable.Name.ToLower() %>Code)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+					/*List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>ID == <%= SourceTable.Name.ToLower() %>ID).ToList();*/
+                    List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>Code == <%= SourceTable.Name.ToLower() %>Code).ToList();
+                    if (list.Count == 0)
+                    {
+                        return ReturnType.NotExisted;
+                    }
+
+                    else
+                    {
+                        <%= SourceTable.Name  %> sy = list.First();
+                        alading.DeleteObject(sy);
+                        alading.SaveChanges();
+                        return ReturnType.Success;
+                    }
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (System.Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+        }
+      
+        public ReturnType Update<%= SourceTable.Name %>(<%= SourceTable.Name  %> <%= SourceTable.Name.ToLower() %>)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    /*<%= SourceTable.Name  %> result = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>ID == <%= SourceTable.Name.ToLower() %>.<%= SourceTable.Name  %>ID).FirstOrDefault();*/
+                    <%= SourceTable.Name  %> result = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>Code == <%= SourceTable.Name.ToLower() %>.<%= SourceTable.Name  %>Code).FirstOrDefault();
+                    if (result == null)
+                    {
+                        return ReturnType.NotExisted;
+                    }
+                    #region   Using Attach() Function Update,Default USE;          
+                    alading.Attach(result);
+                    alading.ApplyPropertyChanges("<%= SourceTable.Name %>", <%= SourceTable.Name.ToLower() %>);
+                    #endregion
+                    
+                    #region    Using All Items Replace To Update ,Default UnUse
+                    /*		
+                    <% for (int i = 0; i < SourceTable.NonPrimaryKeyColumns.Count; i++) {
+                        if(SourceTable.NonPrimaryKeyColumns[i].Name==SourceTable.Name +"ID")
+                        {
+                            continue;
+                        }%>
+                    
+                        result.<%= SourceTable.NonPrimaryKeyColumns[i].Name %> = <%= SourceTable.Name.ToLower() %>.<%= SourceTable.NonPrimaryKeyColumns[i].Name %>;
+                    <%}%>
+			
+                    */
+                    #endregion  
+					if (alading.SaveChanges() == 1)
+                    {
+                        return ReturnType.Success;
+                    }
+                    else
+                    {
+                        return ReturnType.OthersError;
+                    }
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+        }
+       
+        public ReturnType Update<%= SourceTable.Name  %>(string <%= SourceTable.Name.ToLower() %>Code, <%= SourceTable.Name  %> <%= SourceTable.Name.ToLower() %>)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    /*var result = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>ID == <%= SourceTable.Name.ToLower() %>ID).ToList();*/
+                    var result = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>Code == <%= SourceTable.Name.ToLower() %>Code).ToList();
+                    if (result.Count == 0)
+                    {
+                        return ReturnType.NotExisted;
+                    }
+                  
+                    <%= SourceTable.Name  %> ob = result.First();
+                    <% for (int i = 0; i < SourceTable.NonPrimaryKeyColumns.Count; i++) {
+                    if(SourceTable.NonPrimaryKeyColumns[i].Name==SourceTable.Name +"ID")
+                    {
+                        continue;
+                    }%>                
+                    ob.<%= SourceTable.NonPrimaryKeyColumns[i].Name %> = <%= SourceTable.Name.ToLower() %>.<%= SourceTable.NonPrimaryKeyColumns[i].Name %>;
+                    <%}%>
+                    
+                    if (alading.SaveChanges() == 1)
+                    {
+                        return ReturnType.Success;
+                    }  
+                    else
+                    {
+                        return ReturnType.OthersError;
+                    }
+                }
+            }
+            catch (SqlException sex)
+            {
+                return ReturnType.ConnFailed;
+            }
+            catch (System.Exception ex)
+            {
+                return ReturnType.OthersError;
+            }
+        }
+     
+        public List<<%= SourceTable.Name  %>> GetAll<%= SourceTable.Name  %>()
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.ToList();
+                    return list;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+      
+        public List<<%= SourceTable.Name  %>> Get<%= SourceTable.Name  %>(Func<<%= SourceTable.Name  %>, bool> func)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(func).ToList();
+                    return list;
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+     
+        public <%= SourceTable.Name %> Get<%= SourceTable.Name  %>(string <%= SourceTable.Name.ToLower() %>Code)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    /*List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>ID == <%= SourceTable.Name.ToLower() %>ID).ToList();*/
+                    List<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(p => p.<%= SourceTable.Name  %>Code == <%= SourceTable.Name.ToLower() %>Code).ToList();
+                    if (list.Count == 0)
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return list.First();
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        public List<<%= SourceTable.Name  %>> Get<%= SourceTable.Name  %>(int pageIndex, int pageSize, out int rowCount)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {                    
+					var ob = (from u in alading.<%= SourceTable.Name  %> orderby u.<%= SourceTable.Name  %>ID descending select u).Skip((pageIndex-1) * pageSize).Take(pageSize);
+                    rowCount = alading.<%= SourceTable.Name %>.Count();
+                    return ob.ToList();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        public List<<%= SourceTable.Name  %>> Get<%= SourceTable.Name  %>(Func<<%= SourceTable.Name  %>, bool> func, int pageIndex, int pageSize, out int rowCount)
+        {
+            try
+            {
+                using (AladingEntities alading = new AladingEntities(AppSettings.GetConnectionString()))
+                {
+                    IOrderedEnumerable<<%= SourceTable.Name  %>> list = alading.<%= SourceTable.Name  %>.Where(func).OrderByDescending(a=>a.<%= SourceTable.Name  %>ID);
+                    rowCount = list.Count();
+                    return list.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+                }
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }        
+    }
+}
+

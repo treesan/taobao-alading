@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OrderList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IsSelected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="oid" msdata:Caption="订单编码" type="xs:string" minOccurs="0" />
+              <xs:element name="TradeOrderCode" msdata:Caption="TradeOrderCode" type="xs:string" minOccurs="0" />
+              <xs:element name="numSplit" msdata:Caption="拆分量" type="xs:string" minOccurs="0" />
+              <xs:element name="tid" msdata:Caption="交易编码" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomTid" type="xs:string" minOccurs="0" />
+              <xs:element name="iid" msdata:Caption="商品编码" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msdata:Caption="商品名" type="xs:string" minOccurs="0" />
+              <xs:element name="sku_properties_name" msdata:Caption="商品属性" type="xs:string" minOccurs="0" />
+              <xs:element name="LeftQuantity" msdata:Caption="库存剩余量" type="xs:string" minOccurs="0" />
+              <xs:element name="num" msdata:Caption="购买数" type="xs:string" minOccurs="0" />
+              <xs:element name="price" msdata:Caption="商品价格" type="xs:string" minOccurs="0" />
+              <xs:element name="orderTotalFee" msdata:Caption="商品金额" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemType" msdata:Caption="宝贝类别" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderType" msdata:Caption="商品性质" type="xs:string" minOccurs="0" />
+              <xs:element name="TradeIsLockProduct" msdata:Caption="缺货与否" type="xs:string" minOccurs="0" />
+              <xs:element name="payment" msdata:Caption="payment" type="xs:string" minOccurs="0" />
+              <xs:element name="adjust_fee" msdata:Caption="调整费" type="xs:string" minOccurs="0" />
+             
+              </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

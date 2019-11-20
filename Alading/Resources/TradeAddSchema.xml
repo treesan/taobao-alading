@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="orders" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Orders">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="operateDel" msdata:Caption="删除操作" type="xs:string" minOccurs="0" />
+              <xs:element name="oid" msdata:Caption="订单id" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msdata:Caption="商品名" type="xs:string" minOccurs="0" />
+              <xs:element name="SkuProps_Str" msdata:Caption="商品属性" type="xs:string" minOccurs="0" />
+              <xs:element name="OuterID" msdata:Caption="商品外部SKu编码" type="xs:string" minOccurs="0" />
+              <xs:element name="LeftQuantity" msdata:Caption="库存剩余量" type="xs:string" minOccurs="0" />
+              <xs:element name="num" msdata:Caption="购买数" type="xs:string" minOccurs="0" />
+              <xs:element name="price" msdata:Caption="商品价格" type="xs:string" minOccurs="0" />
+              <xs:element name="orderTotalFee" msdata:Caption="总价" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderType" msdata:Caption="商品种类" type="xs:string" minOccurs="0" />
+             </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

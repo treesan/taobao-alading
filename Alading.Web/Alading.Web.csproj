@@ -1,0 +1,372 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73E6C959-1772-48D9-BCF9-AA9CFC03EB9F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alading.Web</RootNamespace>
+    <AssemblyName>Alading.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddShop.aspx" />
+    <Content Include="AddUser.aspx" />
+    <Content Include="Controls\AddShopControl.ascx" />
+    <Content Include="Controls\EditPwdControl.ascx" />
+    <Content Include="Controls\EditUserControl.ascx" />
+    <Content Include="Controls\ShopListControl.ascx" />
+    <Content Include="Controls\UserListControl.ascx" />
+    <Content Include="Controls\UserRegisterControl.ascx" />
+    <Content Include="DelShop.aspx" />
+    <Content Include="DelUser.aspx" />
+    <Content Include="EditPwd.aspx" />
+    <Content Include="EditShop.aspx" />
+    <Content Include="EditUser.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Service\WebService.asmx" />
+    <Content Include="UserInfo.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddShop.aspx.cs">
+      <DependentUpon>AddShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddShop.aspx.designer.cs">
+      <DependentUpon>AddShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\AreaService.cs" />
+    <Compile Include="Bussiness\ConnectionHelper.cs" />
+    <Compile Include="Bussiness\HashProvider.cs" />
+    <Compile Include="Bussiness\HelpTopicService.cs" />
+    <Compile Include="Bussiness\ServiceException.cs" />
+    <Compile Include="Bussiness\ShopService.cs" />
+    <Compile Include="Bussiness\UpdateService.cs" />
+    <Compile Include="Bussiness\UserService.cs" />
+    <Compile Include="Bussiness\NewsService.cs" />
+    <Compile Include="Controls\AddShopControl.ascx.cs">
+      <DependentUpon>AddShopControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AddShopControl.ascx.designer.cs">
+      <DependentUpon>AddShopControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditPwdControl.ascx.cs">
+      <DependentUpon>EditPwdControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EditPwdControl.ascx.designer.cs">
+      <DependentUpon>EditPwdControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditUserControl.ascx.cs">
+      <DependentUpon>EditUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EditUserControl.ascx.designer.cs">
+      <DependentUpon>EditUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShopListControl.ascx.cs">
+      <DependentUpon>ShopListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ShopListControl.ascx.designer.cs">
+      <DependentUpon>ShopListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserListControl.ascx.cs">
+      <DependentUpon>UserListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserListControl.ascx.designer.cs">
+      <DependentUpon>UserListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserRegisterControl.ascx.cs">
+      <DependentUpon>UserRegisterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserRegisterControl.ascx.designer.cs">
+      <DependentUpon>UserRegisterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DelShop.aspx.cs">
+      <DependentUpon>DelShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DelShop.aspx.designer.cs">
+      <DependentUpon>DelShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DelUser.aspx.cs">
+      <DependentUpon>DelUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DelUser.aspx.designer.cs">
+      <DependentUpon>DelUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPwd.aspx.cs">
+      <DependentUpon>EditPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPwd.aspx.designer.cs">
+      <DependentUpon>EditPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditShop.aspx.cs">
+      <DependentUpon>EditShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditShop.aspx.designer.cs">
+      <DependentUpon>EditShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpList.aspx.cs">
+      <DependentUpon>HelpList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelpList.aspx.designer.cs">
+      <DependentUpon>HelpList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpTopic.aspx.cs">
+      <DependentUpon>HelpTopic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelpTopic.aspx.designer.cs">
+      <DependentUpon>HelpTopic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsDetail.aspx.cs">
+      <DependentUpon>NewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsDetail.aspx.designer.cs">
+      <DependentUpon>NewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewSite.Master.cs">
+      <DependentUpon>NewSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewSite.Master.designer.cs">
+      <DependentUpon>NewSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\UpdateWebService.asmx.cs">
+      <DependentUpon>UpdateWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\WebService.asmx.cs">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alading.Web.Entity\Alading.Web.Entity.csproj">
+      <Project>{DAC52943-DF53-44E9-8892-F5612D3CC192}</Project>
+      <Name>Alading.Web.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\account_bg.png" />
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\aladdin_logo_2.png" />
+    <Content Include="Content\images\aladdin_logo_3.png" />
+    <Content Include="Content\images\aladdin_title_2.png" />
+    <Content Include="Content\images\alibaba_logo.jpg" />
+    <Content Include="Content\images\arrow_bg.jpg" />
+    <Content Include="Content\images\btn_home.jpg" />
+    <Content Include="Content\images\btn_login.png" />
+    <Content Include="Content\images\btn_login2.png" />
+    <Content Include="Content\images\btn_register.png" />
+    <Content Include="Content\images\btn_top.jpg" />
+    <Content Include="Content\images\cat_select.png" />
+    <Content Include="Content\images\client_service.png" />
+    <Content Include="Content\images\core_function_icon.png" />
+    <Content Include="Content\images\function_part_1.jpg" />
+    <Content Include="Content\images\function_part_2.jpg" />
+    <Content Include="Content\images\function_part_3.jpg" />
+    <Content Include="Content\images\function_part_4.jpg" />
+    <Content Include="Content\images\function_part_5.jpg" />
+    <Content Include="Content\images\function_part_6.jpg" />
+    <Content Include="Content\images\help_body.jpg" />
+    <Content Include="Content\images\help_header.jpg" />
+    <Content Include="Content\images\help_topic_body.jpg" />
+    <Content Include="Content\images\help_topic_bottom.jpg" />
+    <Content Include="Content\images\help_topic_top.jpg" />
+    <Content Include="Content\images\ibm_logo.jpg" />
+    <Content Include="Content\images\index_body.jpg" />
+    <Content Include="Content\images\index_footer.jpg" />
+    <Content Include="Content\images\index_header.jpg" />
+    <Content Include="Content\images\index_header_product.png" />
+    <Content Include="Content\images\index_header_title.png" />
+    <Content Include="Content\images\index_info_bg.png" />
+    <Content Include="Content\images\index_info_bg2.png" />
+    <Content Include="Content\images\index_top.jpg" />
+    <Content Include="Content\images\lock.png" />
+    <Content Include="Content\images\logo0.png" />
+    <Content Include="Content\images\logo1.png" />
+    <Content Include="Content\images\microsoft_logo.jpg" />
+    <Content Include="Content\images\nav_bg.png" />
+    <Content Include="Content\images\nav_select.png" />
+    <Content Include="Content\images\nav_shadow.png" />
+    <Content Include="Content\images\news_body.jpg" />
+    <Content Include="Content\images\news_cat_body.jpg" />
+    <Content Include="Content\images\news_cat_bottom.jpg" />
+    <Content Include="Content\images\news_cat_top.jpg" />
+    <Content Include="Content\images\news_header.jpg" />
+    <Content Include="Content\images\password_bg.png" />
+    <Content Include="Content\images\product_layout.png" />
+    <Content Include="Content\images\talk_qq.png" />
+    <Content Include="Content\images\taobao_logo.jpg" />
+    <Content Include="Content\images\topic_icon.png" />
+    <Content Include="Content\images\topic_top.jpg" />
+    <Content Include="Content\images\top_bg.jpg" />
+    <Content Include="Content\images\user.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="HelpList.aspx" />
+    <Content Include="HelpTopic.aspx" />
+    <Content Include="NewsDetail.aspx" />
+    <Content Include="NewSite.Master" />
+    <Content Include="NewsList.aspx" />
+    <Content Include="Product.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65255</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

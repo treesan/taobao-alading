@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://www.kuai888.com.cn/svc/ExpressService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://www.kuai888.com.cn/svc/ExpressService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.kuai888.com.cn/svc/ExpressService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ExpressService_GetExpressList_InputMessage">
+    <wsdl:part name="parameters" element="GetExpressList" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetExpressList_OutputMessage">
+    <wsdl:part name="parameters" element="GetExpressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetStatisticInfo_InputMessage">
+    <wsdl:part name="parameters" element="GetStatisticInfo" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetStatisticInfo_OutputMessage">
+    <wsdl:part name="parameters" element="GetStatisticInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_SearchExpressList_InputMessage">
+    <wsdl:part name="parameters" element="SearchExpressList" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_SearchExpressList_OutputMessage">
+    <wsdl:part name="parameters" element="SearchExpressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_SearchCustomerExpressList_InputMessage">
+    <wsdl:part name="parameters" element="SearchCustomerExpressList" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_SearchCustomerExpressList_OutputMessage">
+    <wsdl:part name="parameters" element="SearchCustomerExpressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetUserExpressTrack_InputMessage">
+    <wsdl:part name="parameters" element="GetUserExpressTrack" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetUserExpressTrack_OutputMessage">
+    <wsdl:part name="parameters" element="GetUserExpressTrackResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_UpdateExpressStatus_InputMessage">
+    <wsdl:part name="parameters" element="UpdateExpressStatus" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_UpdateExpressStatus_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateExpressStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_AddNewExpressTrack_InputMessage">
+    <wsdl:part name="parameters" element="AddNewExpressTrack" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_AddNewExpressTrack_OutputMessage">
+    <wsdl:part name="parameters" element="AddNewExpressTrackResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetAreas_InputMessage">
+    <wsdl:part name="parameters" element="GetAreas" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetAreas_OutputMessage">
+    <wsdl:part name="parameters" element="GetAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_ResetValidateCode_InputMessage">
+    <wsdl:part name="parameters" element="ResetValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_ResetValidateCode_OutputMessage">
+    <wsdl:part name="parameters" element="ResetValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetCompanyList_InputMessage">
+    <wsdl:part name="parameters" element="GetCompanyList" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetCompanyList_OutputMessage">
+    <wsdl:part name="parameters" element="GetCompanyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_ChangExpressOutId_InputMessage">
+    <wsdl:part name="parameters" element="ChangExpressOutId" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_ChangExpressOutId_OutputMessage">
+    <wsdl:part name="parameters" element="ChangExpressOutIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_UpdateMemo_InputMessage">
+    <wsdl:part name="parameters" element="UpdateMemo" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_UpdateMemo_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSendAndAcceptStat_InputMessage">
+    <wsdl:part name="parameters" element="GetSendAndAcceptStat" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSendAndAcceptStat_OutputMessage">
+    <wsdl:part name="parameters" element="GetSendAndAcceptStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetEfficiencyStat_InputMessage">
+    <wsdl:part name="parameters" element="GetEfficiencyStat" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetEfficiencyStat_OutputMessage">
+    <wsdl:part name="parameters" element="GetEfficiencyStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetCompanyUseageStat_InputMessage">
+    <wsdl:part name="parameters" element="GetCompanyUseageStat" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetCompanyUseageStat_OutputMessage">
+    <wsdl:part name="parameters" element="GetCompanyUseageStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetGlobalCompanyUseageStat_InputMessage">
+    <wsdl:part name="parameters" element="GetGlobalCompanyUseageStat" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetGlobalCompanyUseageStat_OutputMessage">
+    <wsdl:part name="parameters" element="GetGlobalCompanyUseageStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSelfCompanyUseageStat_InputMessage">
+    <wsdl:part name="parameters" element="GetSelfCompanyUseageStat" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSelfCompanyUseageStat_OutputMessage">
+    <wsdl:part name="parameters" element="GetSelfCompanyUseageStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetCustomerAreaStat_InputMessage">
+    <wsdl:part name="parameters" element="GetCustomerAreaStat" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetCustomerAreaStat_OutputMessage">
+    <wsdl:part name="parameters" element="GetCustomerAreaStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_Exit_InputMessage">
+    <wsdl:part name="parameters" element="Exit" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_Exit_OutputMessage">
+    <wsdl:part name="parameters" element="ExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSystemMessage_InputMessage">
+    <wsdl:part name="parameters" element="GetSystemMessage" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSystemMessage_OutputMessage">
+    <wsdl:part name="parameters" element="GetSystemMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetAIKeyword_InputMessage">
+    <wsdl:part name="parameters" element="GetAIKeyword" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetAIKeyword_OutputMessage">
+    <wsdl:part name="parameters" element="GetAIKeywordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSoldTrades_InputMessage">
+    <wsdl:part name="parameters" element="GetSoldTrades" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetSoldTrades_OutputMessage">
+    <wsdl:part name="parameters" element="GetSoldTradesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetTradeInfo_InputMessage">
+    <wsdl:part name="parameters" element="GetTradeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ExpressService_GetTradeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="GetTradeInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExpressService">
+    <wsdl:operation name="GetExpressList">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetExpressList" message="ExpressService_GetExpressList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetExpressListResponse" message="ExpressService_GetExpressList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticInfo">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetStatisticInfo" message="ExpressService_GetStatisticInfo_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetStatisticInfoResponse" message="ExpressService_GetStatisticInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchExpressList">
+      <wsdl:input wsaw:Action="urn:ExpressService/SearchExpressList" message="ExpressService_SearchExpressList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/SearchExpressListResponse" message="ExpressService_SearchExpressList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomerExpressList">
+      <wsdl:input wsaw:Action="urn:ExpressService/SearchCustomerExpressList" message="ExpressService_SearchCustomerExpressList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/SearchCustomerExpressListResponse" message="ExpressService_SearchCustomerExpressList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExpressTrack">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetUserExpressTrack" message="ExpressService_GetUserExpressTrack_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetUserExpressTrackResponse" message="ExpressService_GetUserExpressTrack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpressStatus">
+      <wsdl:input wsaw:Action="urn:ExpressService/UpdateExpressStatus" message="ExpressService_UpdateExpressStatus_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/UpdateExpressStatusResponse" message="ExpressService_UpdateExpressStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpressTrack">
+      <wsdl:input wsaw:Action="urn:ExpressService/AddNewExpressTrack" message="ExpressService_AddNewExpressTrack_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/AddNewExpressTrackResponse" message="ExpressService_AddNewExpressTrack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreas">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetAreas" message="ExpressService_GetAreas_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetAreasResponse" message="ExpressService_GetAreas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetValidateCode">
+      <wsdl:input wsaw:Action="urn:ExpressService/ResetValidateCode" message="ExpressService_ResetValidateCode_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/ResetValidateCodeResponse" message="ExpressService_ResetValidateCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetUserInfo" message="ExpressService_GetUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetUserInfoResponse" message="ExpressService_GetUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyList">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetCompanyList" message="ExpressService_GetCompanyList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetCompanyListResponse" message="ExpressService_GetCompanyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangExpressOutId">
+      <wsdl:input wsaw:Action="urn:ExpressService/ChangExpressOutId" message="ExpressService_ChangExpressOutId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/ChangExpressOutIdResponse" message="ExpressService_ChangExpressOutId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemo">
+      <wsdl:input wsaw:Action="urn:ExpressService/UpdateMemo" message="ExpressService_UpdateMemo_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/UpdateMemoResponse" message="ExpressService_UpdateMemo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendAndAcceptStat">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetSendAndAcceptStat" message="ExpressService_GetSendAndAcceptStat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetSendAndAcceptStatResponse" message="ExpressService_GetSendAndAcceptStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEfficiencyStat">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetEfficiencyStat" message="ExpressService_GetEfficiencyStat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetEfficiencyStatResponse" message="ExpressService_GetEfficiencyStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyUseageStat">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetCompanyUseageStat" message="ExpressService_GetCompanyUseageStat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetCompanyUseageStatResponse" message="ExpressService_GetCompanyUseageStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalCompanyUseageStat">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetGlobalCompanyUseageStat" message="ExpressService_GetGlobalCompanyUseageStat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetGlobalCompanyUseageStatResponse" message="ExpressService_GetGlobalCompanyUseageStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelfCompanyUseageStat">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetSelfCompanyUseageStat" message="ExpressService_GetSelfCompanyUseageStat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetSelfCompanyUseageStatResponse" message="ExpressService_GetSelfCompanyUseageStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAreaStat">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetCustomerAreaStat" message="ExpressService_GetCustomerAreaStat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetCustomerAreaStatResponse" message="ExpressService_GetCustomerAreaStat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exit">
+      <wsdl:input wsaw:Action="urn:ExpressService/Exit" message="ExpressService_Exit_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/ExitResponse" message="ExpressService_Exit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemMessage">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetSystemMessage" message="ExpressService_GetSystemMessage_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetSystemMessageResponse" message="ExpressService_GetSystemMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAIKeyword">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetAIKeyword" message="ExpressService_GetAIKeyword_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetAIKeywordResponse" message="ExpressService_GetAIKeyword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSoldTrades">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetSoldTrades" message="ExpressService_GetSoldTrades_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetSoldTradesResponse" message="ExpressService_GetSoldTrades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTradeInfo">
+      <wsdl:input wsaw:Action="urn:ExpressService/GetTradeInfo" message="ExpressService_GetTradeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ExpressService/GetTradeInfoResponse" message="ExpressService_GetTradeInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

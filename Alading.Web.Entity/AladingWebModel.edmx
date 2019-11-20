@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AladingWebModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="AladingWebModelStoreContainer">
+          <EntitySet Name="Area" EntityType="AladingWebModel.Store.Area" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FileUpdate" EntityType="AladingWebModel.Store.FileUpdate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HelpCat" EntityType="AladingWebModel.Store.HelpCat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HelpTopic" EntityType="AladingWebModel.Store.HelpTopic" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="News" EntityType="AladingWebModel.Store.News" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NewsCat" EntityType="AladingWebModel.Store.NewsCat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Shop" EntityType="AladingWebModel.Store.Shop" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Update" EntityType="AladingWebModel.Store.Update" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="AladingWebModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Version" EntityType="AladingWebModel.Store.Version" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="type" Type="int" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="parent_id" Type="varchar" MaxLength="50" />
+          <Property Name="zip" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FileUpdate">
+          <Key>
+            <PropertyRef Name="UpdateFileID" />
+          </Key>
+          <Property Name="UpdateFileID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VersionCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FileNameAlias" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FilePath" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="SrcFilePath" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="Length" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RunAfterUpdate" Type="bit" Nullable="false" />
+          <Property Name="Expand1" Type="varchar" MaxLength="50" />
+          <Property Name="Expand2" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HelpCat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Group" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="HelpTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Content" Type="varchar(max)" Nullable="false" />
+          <Property Name="PostTime" Type="datetime" Nullable="false" />
+          <Property Name="Cat" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Click" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Content" Type="varchar(max)" Nullable="false" />
+          <Property Name="PostTime" Type="datetime" Nullable="false" />
+          <Property Name="Cat" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Click" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewsCat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Group" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="ShopID" />
+          </Key>
+          <Property Name="ShopID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ShopNick" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ShopType" Type="int" Nullable="false" />
+          <Property Name="ShopTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="Sign" Type="varchar" Nullable="false" MaxLength="512" />
+          <Property Name="Province" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Area" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Tel" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Update">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ComponentCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ComponentName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="ServerPath" Type="varchar" Nullable="false" MaxLength="1024" />
+          <Property Name="ServerFileName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="ClientPath" Type="varchar" Nullable="false" MaxLength="1024" />
+          <Property Name="ClientFileName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="DownloadName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Version" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Account" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Tel" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="Company" Type="varchar" MaxLength="256" />
+          <Property Name="Address" Type="varchar" MaxLength="256" />
+          <Property Name="MaxUser" Type="int" Nullable="false" />
+          <Property Name="HasUser" Type="int" Nullable="false" />
+          <Property Name="MaxShop" Type="int" Nullable="false" />
+          <Property Name="HasShop" Type="int" Nullable="false" />
+          <Property Name="FirstRun" Type="bit" Nullable="false" />
+          <Property Name="Approve" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Version">
+          <Key>
+            <PropertyRef Name="VersionID" />
+          </Key>
+          <Property Name="VersionID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VersionCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="VersionType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Remark" Type="varchar(max)" Nullable="false" />
+          <Property Name="PublishTime" Type="datetime2" Nullable="false" />
+          <Property Name="Expand1" Type="varchar" MaxLength="50" />
+          <Property Name="Expand2" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AladingWebModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="AladingWebEntities">
+          <EntitySet Name="Area" EntityType="AladingWebModel.Area" />
+          <EntitySet Name="FileUpdate" EntityType="AladingWebModel.FileUpdate" />
+          <EntitySet Name="HelpCat" EntityType="AladingWebModel.HelpCat" />
+          <EntitySet Name="HelpTopic" EntityType="AladingWebModel.HelpTopic" />
+          <EntitySet Name="News" EntityType="AladingWebModel.News" />
+          <EntitySet Name="NewsCat" EntityType="AladingWebModel.NewsCat" />
+          <EntitySet Name="Shop" EntityType="AladingWebModel.Shop" />
+          <EntitySet Name="Update" EntityType="AladingWebModel.Update" />
+          <EntitySet Name="User" EntityType="AladingWebModel.User" />
+          <EntitySet Name="Version" EntityType="AladingWebModel.Version" />
+        </EntityContainer>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="type" Type="Int32" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="parent_id" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="zip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FileUpdate">
+          <Key>
+            <PropertyRef Name="UpdateFileID" />
+          </Key>
+          <Property Name="UpdateFileID" Type="Int64" Nullable="false" />
+          <Property Name="VersionCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FileNameAlias" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="SrcFilePath" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="Length" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RunAfterUpdate" Type="Boolean" Nullable="false" />
+          <Property Name="Expand1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Expand2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="HelpCat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Group" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="HelpTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PostTime" Type="DateTime" Nullable="false" />
+          <Property Name="Cat" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Click" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PostTime" Type="DateTime" Nullable="false" />
+          <Property Name="Cat" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Click" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewsCat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Group" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="ShopID" />
+          </Key>
+          <Property Name="ShopID" Type="Int32" Nullable="false" />
+          <Property Name="ShopCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShopNick" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ShopType" Type="Int32" Nullable="false" />
+          <Property Name="ShopTypeName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Sign" Type="String" Nullable="false" MaxLength="512" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Area" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Update">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ComponentCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ComponentName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="ServerPath" Type="String" Nullable="false" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="ServerFileName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="ClientPath" Type="String" Nullable="false" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="ClientFileName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Account" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Company" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="MaxUser" Type="Int32" Nullable="false" />
+          <Property Name="HasUser" Type="Int32" Nullable="false" />
+          <Property Name="MaxShop" Type="Int32" Nullable="false" />
+          <Property Name="HasShop" Type="Int32" Nullable="false" />
+          <Property Name="FirstRun" Type="Boolean" Nullable="false" />
+          <Property Name="Approve" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Version">
+          <Key>
+            <PropertyRef Name="VersionID" />
+          </Key>
+          <Property Name="VersionID" Type="Int64" Nullable="false" />
+          <Property Name="VersionCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VersionType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="PublishTime" Type="DateTime" Nullable="false" />
+          <Property Name="Expand1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Expand2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="AladingWebModelStoreContainer" CdmEntityContainer="AladingWebEntities">
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.Area)">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FileUpdate">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.FileUpdate)">
+              <MappingFragment StoreEntitySet="FileUpdate">
+                <ScalarProperty Name="UpdateFileID" ColumnName="UpdateFileID" />
+                <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileNameAlias" ColumnName="FileNameAlias" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="SrcFilePath" ColumnName="SrcFilePath" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="RunAfterUpdate" ColumnName="RunAfterUpdate" />
+                <ScalarProperty Name="Expand1" ColumnName="Expand1" />
+                <ScalarProperty Name="Expand2" ColumnName="Expand2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HelpCat">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.HelpCat)">
+              <MappingFragment StoreEntitySet="HelpCat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HelpTopic">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.HelpTopic)">
+              <MappingFragment StoreEntitySet="HelpTopic">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+                <ScalarProperty Name="Cat" ColumnName="Cat" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Click" ColumnName="Click" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.News)">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+                <ScalarProperty Name="Cat" ColumnName="Cat" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Click" ColumnName="Click" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsCat">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.NewsCat)">
+              <MappingFragment StoreEntitySet="NewsCat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shop">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.Shop)">
+              <MappingFragment StoreEntitySet="Shop">
+                <ScalarProperty Name="ShopID" ColumnName="ShopID" />
+                <ScalarProperty Name="ShopCode" ColumnName="ShopCode" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+                <ScalarProperty Name="ShopNick" ColumnName="ShopNick" />
+                <ScalarProperty Name="ShopType" ColumnName="ShopType" />
+                <ScalarProperty Name="ShopTypeName" ColumnName="ShopTypeName" />
+                <ScalarProperty Name="Sign" ColumnName="Sign" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Update">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.Update)">
+              <MappingFragment StoreEntitySet="Update">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ComponentCode" ColumnName="ComponentCode" />
+                <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+                <ScalarProperty Name="ServerPath" ColumnName="ServerPath" />
+                <ScalarProperty Name="ServerFileName" ColumnName="ServerFileName" />
+                <ScalarProperty Name="ClientPath" ColumnName="ClientPath" />
+                <ScalarProperty Name="ClientFileName" ColumnName="ClientFileName" />
+                <ScalarProperty Name="DownloadName" ColumnName="DownloadName" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.User)">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="MaxUser" ColumnName="MaxUser" />
+                <ScalarProperty Name="HasUser" ColumnName="HasUser" />
+                <ScalarProperty Name="MaxShop" ColumnName="MaxShop" />
+                <ScalarProperty Name="HasShop" ColumnName="HasShop" />
+                <ScalarProperty Name="FirstRun" ColumnName="FirstRun" />
+                <ScalarProperty Name="Approve" ColumnName="Approve" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Version">
+            <EntityTypeMapping TypeName="IsTypeOf(AladingWebModel.Version)">
+              <MappingFragment StoreEntitySet="Version">
+                <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+                <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+                <ScalarProperty Name="VersionType" ColumnName="VersionType" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+                <ScalarProperty Name="Expand1" ColumnName="Expand1" />
+                <ScalarProperty Name="Expand2" ColumnName="Expand2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="AladingWebModel">
+        <EntityTypeShape EntityType="AladingWebModel.Area" Width="1.5" PointX="0.75" PointY="0.75" Height="2.16105224609375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.FileUpdate" Width="1.5" PointX="2.75" PointY="0.75" Height="2.9251310221354165" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.HelpCat" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5879931640624998" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.HelpTopic" Width="1.5" PointX="0.75" PointY="4.75" Height="2.5430916341145835" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.News" Width="1.5" PointX="2.75" PointY="4.75" Height="2.5430916341145835" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.NewsCat" Width="1.5" PointX="4.75" PointY="3.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.Shop" Width="1.5" PointX="6.75" PointY="0.75" Height="3.3071704101562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.Update" Width="1.5" PointX="4.75" PointY="6.75" Height="2.9251310221354174" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.User" Width="1.5" PointX="6.75" PointY="5.75" Height="3.8802294921874996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AladingWebModel.Version" Width="1.5" PointX="8.75" PointY="0.75" Height="2.3520719401041665" IsExpanded="true" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{149BC8A5-A9B4-4EFF-912B-250B154EB577}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alading.DataProvider</RootNamespace>
+    <AssemblyName>Alading.DataProvider</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alading.Core\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaProvider.cs" />
+    <Compile Include="AssembleItemProvider.cs" />
+    <Compile Include="Base\ProviderBase.cs" />
+    <Compile Include="logisticcompanytemplateDataProvider.cs" />
+    <Compile Include="LogisticCompanyTemplateItemDataprovider.cs" />
+    <Compile Include="PictureProvider.cs" />
+    <Compile Include="PurchaseProductProvider.cs" />
+    <Compile Include="RateContentProvider.cs" />
+    <Compile Include="BrandProvider.cs" />
+    <Compile Include="CodeProvider.cs" />
+    <Compile Include="ConsumerProvider.cs" />
+    <Compile Include="ItemCatProvider.cs" />
+    <Compile Include="ItemPropProvider.cs" />
+    <Compile Include="ItemPropValueProvider.cs" />
+    <Compile Include="ItemProvider.cs" />
+    <Compile Include="ItemSellerAuthorizeProvider.cs" />
+    <Compile Include="JournalAccountProvider.cs" />
+    <Compile Include="LogisticCompanyProvider.cs" />
+    <Compile Include="PayChargeProvider.cs" />
+    <Compile Include="PermissionProvider.cs" />
+    <Compile Include="PostageModeProvider.cs" />
+    <Compile Include="PostageProvider.cs" />
+    <Compile Include="ProductProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrderProvider.cs" />
+    <Compile Include="RolePermissionProvider.cs" />
+    <Compile Include="RoleProvider.cs" />
+    <Compile Include="SellerCatProvider.cs" />
+    <Compile Include="ShippingProvider.cs" />
+    <Compile Include="ShopProvider.cs" />
+    <Compile Include="StockCatProvider.cs" />
+    <Compile Include="StockDetailProvider.cs" />
+    <Compile Include="StockHouseProvider.cs" />
+    <Compile Include="StockInOutProvider.cs" />
+    <Compile Include="StockItemProvider.cs" />
+    <Compile Include="StockLayoutProvider.cs" />
+    <Compile Include="StockPriceProvider.cs" />
+    <Compile Include="StockProductProvider.cs" />
+    <Compile Include="StockPropProvider.cs" />
+    <Compile Include="StockPropValueProvider.cs" />
+    <Compile Include="StockUnitGroupProvider.cs" />
+    <Compile Include="StockUnitProvider.cs" />
+    <Compile Include="SupplierProvider.cs" />
+    <Compile Include="TradeInfoProvider.cs" />
+    <Compile Include="TradeOrderProvider.cs" />
+    <Compile Include="TradeProvider.cs" />
+    <Compile Include="TradeRateProvider.cs" />
+    <Compile Include="TradeRefundMessageProvider.cs" />
+    <Compile Include="TradeRefundProvider.cs" />
+    <Compile Include="UserProvider.cs" />
+    <Compile Include="UserRoleProvider.cs" />
+    <Compile Include="UserSalaryDataProvider.cs" />
+    <Compile Include="View_ItemPropValueProvider.cs" />
+    <Compile Include="View_ItemStockProvider.cs" />
+    <Compile Include="View_OrderItemProvider.cs" />
+    <Compile Include="View_OrderItemSotckProvider.cs" />
+    <Compile Include="View_ShopItemProvider.cs" />
+    <Compile Include="View_StockDetailProvider.cs" />
+    <Compile Include="View_StockItemProductProvider.cs" />
+    <Compile Include="View_TradeAssembleStockProvider.cs" />
+    <Compile Include="View_TradeShopProvider.cs" />
+    <Compile Include="View_TradeStockProvider.cs" />
+    <Compile Include="UserShopProvider.cs" />
+    <Compile Include="UserStockHouseProvider.cs" />
+    <Compile Include="ConsumerVisitProvider.cs" />
+    <Compile Include="ConsumerAddressProvider.cs" />
+    <Compile Include="EmailTemplateProvider.cs" />
+    <Compile Include="TaskProvider.cs" />
+    <Compile Include="EmailTemplateCatProvider.cs" />
+    <Compile Include="View_UserRoleDataProvider.cs" />
+    <Compile Include="ConfigProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alading.Core\Alading.Core.csproj">
+      <Project>{39822A8C-6259-434A-920C-AFEF9AD4DBC0}</Project>
+      <Name>Alading.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alading.Entity\Alading.Entity.csproj">
+      <Project>{67C3A7A5-8F51-4B1B-B30E-578A73C02D85}</Project>
+      <Name>Alading.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alading.Taobao\Alading.Taobao.csproj">
+      <Project>{534B0BBA-26AB-48A5-8FD5-009066599305}</Project>
+      <Name>Alading.Taobao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,283 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Alading.Web.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <link href="Plugin/Style/style.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div style="margin-top: 0px; padding: 0px; padding-right: 83px; float: right; position: relative;
+            display: block;">
+            <span style="position: absolute; padding: 0px; margin-top: 0px;">
+                <img src="img/front/jadebox.png" width="83" height="83" /></span>
+        </div>
+        <table width="1003" align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="left" valign="top" style="background: url(img/front/topbg.jpg) left top no-repeat;
+                    width: 1003px; height: 88px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="22%" align="left" valign="top">
+                                <a href="Default.aspx"><img src="img/front/logo.jpg" width="157" height="88" /></a>
+                            </td>
+                            <td width="32%">
+                                &nbsp;
+                            </td>
+                            <td width="46%" align="right" valign="middle">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="background: url(img/front/navbg.jpg) left top repeat-x; height: 48px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" class="style1">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+                </td>
+            </tr>            
+            <tr>
+                <td align="left" valign="top" style="background: url(img/front/index_66.jpg) left top repeat-x;
+                    height: 55px;">
+                    <img src="img/front/index_53.jpg" width="38" height="55" /><img src="img/front/index_67.jpg"
+                        width="168" height="55" />
+                </td>
+            </tr>
+            <tr>
+                <td height="92" align="center" valign="middle" bgcolor="#f8f8f8">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td align="center" valign="middle">
+                                <a href="http://www.taobao.com">
+                                    <img src="img/front/index_72.jpg" width="134" height="35" /></a>
+                            </td>
+                            <td align="center" valign="middle">
+                                <a href="http://www.microsoft.com">
+                                    <img src="img/front/index_73.jpg" width="135" height="35" /></a>
+                            </td>
+                            <td align="center" valign="middle">
+                                <a href="http://china.alibaba.com">
+                                    <img src="img/front/index_74.jpg" width="134" height="35" /></a>
+                            </td>
+                            <td align="center" valign="middle">
+                                <a href="http://www.ibm.com">
+                                    <img src="img/front/index_75.jpg" width="135" height="35" /></a>
+                            </td>
+                            <td align="center" valign="middle">
+                                <a href="http://www.westsg.com.cn">
+                                    <img src="img/front/index_76.jpg" width="134" height="35" /></a>
+                            </td>
+                            <td align="center" valign="middle">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle" class="aic">
+                                <a href="http://www.taobao.com">淘宝网</a>
+                            </td>
+                            <td align="center" valign="middle" class="aic">
+                                <a href="http://www.microsoft.com">微软</a>
+                            </td>
+                            <td align="center" valign="middle" class="aic">
+                                <a href="http://china.alibaba.com">阿里巴巴</a>
+                            </td>
+                            <td align="center" valign="middle" class="aic">
+                                <a href="http://www.ibm.com">IBM</a>
+                            </td>
+                            <td align="center" valign="middle" class="aic">
+                                <a href="http://www.westsg.com.cn">月读视界</a>
+                            </td>
+                            <td align="center" valign="middle">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="middle" bgcolor="#f0f0f0" height="36">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="39%" align="left" valign="middle" class="copr">
+                                Copyright 2010 © <strong>Aladdin CO.,LTD. </strong>All rights reserved . Design
+                                by Jadebox .
+                            </td>
+                            <td width="15%">
+                                重庆大学微软技术俱乐部
+                            </td>
+                            <td width="8%">
+                                <img src="img/front/index_85.jpg" width="59" height="12" />
+                            </td>
+                            <td width="18%" class="ip">
+                                渝ICP备：6454968
+                            </td>
+                            <td width="6%">
+                                <a href="#">
+                                    <img src="img/front/index_80.jpg" width="52" height="28" /></a>
+                            </td>
+                            <td width="6%">
+                                <a href="#">
+                                    <img src="img/front/index_68.jpg" width="52" height="28" /></a>
+                            </td>
+                            <td width="8%">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top" style="background: url(img/front/footer.jpg) left top repeat-x;
+                    height: 243px;">
+                    <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="61%" height="37">
+                            </td>
+                            <td width="2%">
+                                &nbsp;
+                            </td>
+                            <td width="37%">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" valign="top">
+                                <img src="img/front/index_94.png" width="324" height="50" />
+                            </td>
+                            <td>
+                                <img src="img/front/index_96.png" width="194" height="50" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="21%">
+                                            &nbsp;
+                                        </td>
+                                        <td width="79%" align="left" valign="middle" class="footer1">
+                                            地址：重庆大学微软技术俱乐部 邮编：401147 Mali：Microsoft@MixTrade.com
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td align="left" valign="middle" class="footer1">
+                                            电话：023-67662758 023-67662798 传真：023-67662758
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td align="left" valign="top">
+                                            <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="15%" height="32" align="left" valign="middle" class="more">
+                                                        华东大区：
+                                                    </td>
+                                                    <td width="35%" align="left" valign="middle">
+                                                        <a href="#">
+                                                            <img src="img/front/index_107.png" width="70" height="25" /></a>
+                                                    </td>
+                                                    <td width="15%" align="left" valign="middle">
+                                                        <span class="more">华东大区：</span>
+                                                    </td>
+                                                    <td width="35%" align="left" valign="middle">
+                                                        <a href="#">
+                                                            <img src="img/front/index_107.png" width="70" height="25" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="middle">
+                                                        <span class="more">华东大区：</span>
+                                                    </td>
+                                                    <td align="left" valign="middle">
+                                                        <a href="#">
+                                                            <img src="img/front/index_107.png" width="70" height="25" /></a>
+                                                    </td>
+                                                    <td align="left" valign="middle">
+                                                        <span class="more">华东大区：</span>
+                                                    </td>
+                                                    <td align="left" valign="middle">
+                                                        <a href="#">
+                                                            <img src="img/front/index_107.png" width="70" height="25" /></a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td align="left" valign="top">
+                                <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="17" height="40" align="left" valign="top" class="toptext1">
+                                            &nbsp;<img src="img/front/index_09.jpg" width="10" height="20" />
+                                        </td>
+                                        <td width="132" align="left" valign="middle" class="toptext">
+                                            &nbsp;User Name
+                                        </td>
+                                        <td width="137" rowspan="3" align="center" valign="middle">
+                                            <a href="#">
+                                                <img src="img/front/footer_74.png" width="71" height="60" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="17" height="40" align="left" valign="top" class="toptext1">
+                                            &nbsp;<img src="img/front/index_09.jpg" width="10" height="20" />
+                                        </td>
+                                        <td width="132" align="left" valign="middle" class="toptext">
+                                            &nbsp;User Name
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+    </form>
+</body>
+</html>
